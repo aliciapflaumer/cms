@@ -1,24 +1,20 @@
-# README
+# Content Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is simple barebones application built with Ruby on Rails 5 to create, show, edit, and delete a users article posts. Users can also comment on articles.
 
-Things you may want to cover:
+## Entity Relationship Diagram
 
-* Ruby version
+User -< Articles -< Comments
 
-* System dependencies
+## API endpoints
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Verb   | URI Pattern            | Controller#Action  |
+|--------|----------------------- |------------------  |
+| POST   | `/articles`            | `articles#create`  |
+| PATCH  | `/articles/:id`        | `articles#update`  |
+| GET    | `/articles`            | `articles#index`   |
+| GET    | `/articles/:id`        | `articles#show`    |
+| DELETE | `/articles/:id`        | `articles#destroy` |
+|--------|----------------------- |------------------  |
+| POST   | `/comments`            | `comments#create`  |
+| DELETE | `/comments/:id`        | `comments#destroy` |
