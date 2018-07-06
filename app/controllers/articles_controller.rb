@@ -1,10 +1,10 @@
 # Putting in any text for first line comment to make linter happy
 class ArticlesController < ApplicationController
-
-  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  before_action :set_article, only: %i[update destroy]
 
   def index
     @articles = Article.all
+    # @articles = current_user.articles
   end
 
   def show
@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+
   end
 
   def edit
@@ -21,6 +22,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    # @article = current_user.articles.build(article_params)
+    # @article = Article.build(params[:article])
 
     if @article.save
       redirect_to @article
@@ -47,7 +50,11 @@ class ArticlesController < ApplicationController
 
   private
 
+  def set_article
+    @article = current_user.articles.find(params[:id])
+  end
+
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :user_id)
   end
 end
