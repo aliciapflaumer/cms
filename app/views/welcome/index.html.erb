@@ -1,28 +1,12 @@
 <h1>Hello, Rails!</h1>
-<!-- <form id="sign-up">
-  <input type="text" name="credentials[username]" placeholder="username">
-  <input type="password" name="credentials[password]" placeholder="password">
-  <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation">
-  <input type="submit" name="submit" value="Sign up">
-</form>
-<form id="sign-in">
-  <input type="text" name="credentials[username]" placeholder="username">
-  <input type="password" name="credentials[password]" placeholder="password">
-  <input type="submit" name="submit" value="Sign in">
-</form>
-<form id="change-password">
-  <input type="text" name="password[old]" placeholder="old password">
-  <input type="password" name="password[new]" placeholder="new password">
-  <input type="submit" name="submit" value="Update password">
-</form>
-<form id="sign-out">
-  <input type="submit" name="submit" value="Sign out">
-</form> -->
 <p>Built with &#x1F308; &amp; ❤️  by Alicia Pflaumer</p>
 <div id="user_header">
-   <%= link_to "Sign Up", new_user_path %>
+  <% if  logged_in? %>
+    <%= link_to 'Logout', session_path('bogus-id'), method: :delete %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Log In", new_session_path %>
+  <% end %>
 </div>
-<%= link_to "Log In", new_session_path %>
-<!-- <%= link_to "New User", new_user_path %> | -->
-<%= link_to 'Blog', controller: 'articles' %> |
+<%= link_to 'Blog', controller: 'articles' %> <br>
 <%= link_to 'All users', users_path %>
