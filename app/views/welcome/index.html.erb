@@ -1,5 +1,5 @@
 <h1>Hello, Rails!</h1>
-<form id="sign-up">
+<!-- <form id="sign-up">
   <input type="text" name="credentials[username]" placeholder="username">
   <input type="password" name="credentials[password]" placeholder="password">
   <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation">
@@ -17,8 +17,11 @@
 </form>
 <form id="sign-out">
   <input type="submit" name="submit" value="Sign out">
-</form>
+</form> -->
 <p>Built with &#x1F308; &amp; ❤️  by Alicia Pflaumer</p>
-<%= link_to "New User", new_user_path %> |
+<div id="user_header">
+   <%= link_to "Sign Up", new_user_path %>
+</div>
+<!-- <%= link_to "New User", new_user_path %> | -->
 <%= link_to 'Blog', controller: 'articles' %> |
 <%= link_to 'All users', users_path %>
