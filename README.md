@@ -2,7 +2,7 @@
 
 **Screenshot of app**
 
-![screenshot of cms app](assets/images/screencaptureHomeCMS.jpg)
+![screenshot of cms app](app/assets/images/screencaptureHomeCMS.jpg)
 
 This is simple barebones application built with Ruby on Rails 5 to create, show, edit, and delete a users article posts. Users can also comment on articles.
 
