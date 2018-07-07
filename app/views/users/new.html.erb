@@ -24,7 +24,7 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit "Sign Up" %></div>
-<% end %>
-<%= link_to 'Home', home_path %>
+  </div><br>
+  <div class="actions"><%= f.submit "Sign Up", class: 'btn btn-outline-primary' %></div>
+<% end %><br>
+<%= link_to 'Home', home_path, class: 'btn btn-outline-primary' %>
