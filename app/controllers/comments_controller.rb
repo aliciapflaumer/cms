@@ -1,7 +1,9 @@
 # Adding any text in a comment to make linter happy
 class CommentsController < ApplicationController
 
-  # http_basic_authenticate_with name: 'alp', password: 'secretpw', only: :destroy
+  def show
+    @comment = Comment.find(params[:id])
+  end
 
   def create
     @article = Article.find(params[:article_id])
@@ -13,6 +15,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
+
     redirect_to article_path(@article)
   end
 
