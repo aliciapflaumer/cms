@@ -1,5 +1,7 @@
 # Content Management System
 
+![Screenshot of CMS app](assets/images/screencapture-home-cms.jpg)
+
 This is simple barebones application built with Ruby on Rails 5 to create, show, edit, and delete a users article posts. Users can also comment on articles.
 
 ## Entity Relationship Diagram
