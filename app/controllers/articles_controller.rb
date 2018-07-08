@@ -1,6 +1,6 @@
 # Putting in any text for first line comment to make linter happy
 class ArticlesController < ApplicationController
-  # before_action :set_article, only: %i[update destroy]
+  # before_action :set_article, only: %i[index show]
 
   def index
     @articles = Article.all
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-
+    authorize @article
     if @article.update(article_params)
       redirect_to @article
     else
@@ -42,9 +42,9 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
 
-    redirect_to articles_path, notice: 'Delete successful'
+      @article.destroy
+      redirect_to articles_path, notice: 'Delete successful'
   end
 
   private

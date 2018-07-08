@@ -1,5 +1,6 @@
 # Top-level documentation line makes linter happy
 class ApplicationController < ActionController::Base
+  include Pundit
   protect_from_forgery with: :exception
 
   private
