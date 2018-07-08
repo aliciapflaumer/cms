@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    # user = User.find(params[:user_id])
     # @articles = user.articles
   end
 
@@ -24,7 +23,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     # @article = user.articles.build(article_params)
-    # @article.user_id = session[:id]
 
     if @article.save
       redirect_to @article
