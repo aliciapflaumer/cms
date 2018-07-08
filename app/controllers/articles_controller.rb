@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    # @articles = current_user.articles
+    # user = User.find(params[:user_id])
+    # @articles = user.articles
   end
 
   def show
@@ -22,8 +23,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    # @article = current_user.articles.build(article_params)
-    # @article = Article.build(params[:article])
+    # @article = user.articles.build(article_params)
+    # @article.user_id = session[:id]
 
     if @article.save
       redirect_to @article
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_to articles_path, notice: "Delete successful"
+    redirect_to articles_path, notice: 'Delete successful'
   end
 
   private

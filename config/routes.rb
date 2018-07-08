@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users
+  resources :users do
+    resources :articles
+  end  
   resources :sessions
 
   root 'welcome#index'
