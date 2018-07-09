@@ -1,10 +1,8 @@
-# Putting in any text for first line comment to make linter happy
+# Top-level comment
 class ArticlesController < ApplicationController
-  # before_action :set_article, only: %i[index show]
 
   def index
     @articles = Article.all
-    # @articles = user.articles
   end
 
   def show
@@ -22,7 +20,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    # @article = user.articles.build(article_params)
+    # @article = current_user.articles.build(article_params)
+    @article.user_id = current_user
 
     if @article.save
       redirect_to @article
@@ -32,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    authorize @article
+    # authorize @article
     if @article.update(article_params)
       redirect_to @article
     else
@@ -44,16 +43,17 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
       @article.destroy
-      redirect_to articles_path, notice: 'Delete successful'
+
+    redirect_to articles_path, notice: 'Delete successful'
   end
 
   private
 
-  # def set_article
-  #   @article = current_user.articles.find(params[:id])
-  # end
+  def set_article
+    @article = current_user.articles.find(params[:id])
+  end
 
   def article_params
-    params.require(:article).permit(:title, :text, :user_id)
+    params.require(:article).permit(:title, :text)
   end
 end
