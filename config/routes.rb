@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :articles
-  end  
+    member do
+      get :articles
+    end
+  end
+
   resources :sessions
 
   root 'welcome#index'
