@@ -1,25 +1,23 @@
 <div class="container">
 <h1>All articles</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Title</th>
-    <th>Author</th>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
   </tr>
 
   <% @articles.each do |article| %>
-    <tr>
+    <tr scope="row">
       <td><%= article.title %></td>
       <td><%= article.author %></td>
-      <td><%= link_to 'View', article %></td>
-
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'View', article, class: 'btn btn-outline-default' %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-default' %></td>
       <td><%= link_to 'Delete',
         article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-default' %>
       </td>
-
     </tr>
   <% end %>
 </table>
