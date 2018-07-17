@@ -25,3 +25,6 @@
 # Ignore encrypted secrets key file.
 /config/secrets.yml.enc
 /config/secrets.yml.key
+
+# Ignore image upload folder
+public/
