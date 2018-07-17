@@ -28,3 +28,4 @@
 
 # Ignore image upload folder
 public/
+tmp/uploads
