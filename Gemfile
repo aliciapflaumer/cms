@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.4'
 
 gem 'pg'
 
+gem "rubyzip", ">= 1.2.2"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
@@ -43,7 +45,7 @@ gem 'meta-tags'
 
 gem 'devise'
 
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '>= 4.1.2'
 
 gem 'jquery-rails'
 
