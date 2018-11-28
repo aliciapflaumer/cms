@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-
+gem "rack", ">= 2.0.6"
 gem 'pg'
 
 gem "rubyzip", ">= 1.2.2"
