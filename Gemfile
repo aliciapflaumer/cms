@@ -17,7 +17,7 @@ gem "rubyzip", ">= 1.2.2"
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem "bootstrap-sass", ">= 3.4.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -47,7 +47,7 @@ gem 'meta-tags'
 
 gem 'devise'
 
-gem 'bootstrap', '>= 4.1.2'
+gem 'bootstrap', '>= 4.3.1'
 
 gem 'jquery-rails'
 
